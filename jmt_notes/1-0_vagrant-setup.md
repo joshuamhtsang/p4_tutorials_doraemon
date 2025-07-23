@@ -11,7 +11,7 @@ which suggests installing vagrant and virtual box.  The basic instructions are:
 
 ## Enable syncing of P4 tutorials repo into the Ubuntu 24.04 VM
 
-In the Vagrant [file](./../vm-ubuntu-24.04/Vagrantfile) enable the syncing of the root of the P4 tutorials repo into the VM, by changing this line as follows:
+In the Vagrant [file](./../vm-ubuntu-24.04-jmt/Vagrantfile) enable the syncing of the root of the P4 tutorials repo into the VM, by changing this line as follows:
 ~~~
 config.vm.synced_folder '.', '/vagrant', disabled: true
 ~~~
@@ -24,13 +24,13 @@ This mounts the repo into the `/vagrant/` directory inside the VM.
 
 ## Use Vagrant to spin up the VM
 
-In the [Ubuntu 24.04 VM](./../vm-ubuntu-24.04/) directory, run in the terminal:
+In the [vm-ubuntu-24.04-jmt](./../vm-ubuntu-24.04-jmt/) directory, run in the terminal:
 ~~~
 $ vagrant up --provision
 ~~~
 Now you must WAIT! It takes some time before everything is set up and installed. If you try to login before it's all done, one will not be able to using the 'p4' user.
 
-Note that the `--provision` flag runs the commands in [root-bootstrap.sh](../vm-ubuntu-24.04/root-bootstrap.sh) which technically only needs to be run once, and Vagrant does run it the first time the VM is created.  However, you may find it 'safer' to run the VM with this flag even after the first spin up.
+Note that the `--provision` flag runs the commands in [root-bootstrap.sh](../vm-ubuntu-24.04-jmt/root-bootstrap.sh) which technically only needs to be run once, and Vagrant does run it the first time the VM is created.  However, you may find it 'safer' to run the VM with this flag even after the first spin up.
 
 ## Possible AMD-V error
 
